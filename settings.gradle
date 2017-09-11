@@ -1,0 +1,3 @@
+rootProject.name = 'spring-java8'
+include 'mybean'
+
