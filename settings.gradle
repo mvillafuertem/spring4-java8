@@ -1,3 +1,4 @@
 rootProject.name = 'spring4-java8'
 include 'mybean'
+include 'mydependencyinjection'
 
