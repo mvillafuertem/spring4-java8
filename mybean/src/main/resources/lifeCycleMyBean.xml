@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath:myBeanSimple.xml"/>
-    <import resource="classpath:lifeCycleMyBean.xml"/>
+    <bean id="myLifeCycleBean" class="com.mvillafuertem.mybean.LifeCycleMyBean">
+    </bean>
 
 </beans>
