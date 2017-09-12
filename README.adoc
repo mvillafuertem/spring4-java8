@@ -25,6 +25,60 @@ image:https://codecov.io/gh/mvillafuertem/spring4-java8/branch/master/graph/badg
 .App.class
 ----
 
-include::mybean/src/main/java/com/mvillafuertem/mybean/App.java[]
+public class App {
+
+    private static final Logger log = LoggerFactory.getLogger(App.class);
+
+    public static void main (String[] args) {
+        /*
+            Leo el ApplicationContext
+         */
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("myApplicationContext.xml");
+
+        /*
+            Recupero myBean que ha creado Spring
+         */
+        MyBean myBean = applicationContext.getBean("myBean", MyBean.class);
+        log.debug(myBean.getMessage());
+        /*
+            Antes de tener disponible myLifeCycleBean, puedo realizar operaciones
+         */
+        LifeCycleMyBean myLifeCycleBean = applicationContext.getBean("myLifeCycleBean", LifeCycleMyBean.class);
+    }
+}
 
 ----
+
+== My Dependency Injection
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-factory-autowire[Autowiring modes]
+https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-autowired-annotation[@Autowired]
+
+[source, java, numbered]
+.MyDependencyInjectionTest.class
+----
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "/myApplicationContextTest.xml")
+public class MyDependencyInjectionTest {
+
+    @Autowired
+    private MyDependencyInjection myDependencyInjection;
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @Test
+    public void setMyDependency() throws Exception {
+        assertThat(this.myDependencyInjection).isNotNull();
+        assertThat(this.myDependencyInjection.getMyDependency()).isNotNull();
+        assertThat(this.myDependencyInjection.getMyDependency().getMyDependency2()).isNotNull();
+    }
+
+}
+
+----
+
+
+
