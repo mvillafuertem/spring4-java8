@@ -17,6 +17,7 @@
 
 NOTE: Research about https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/[Spring 4] with https://docs.oracle.com/javase/8/docs/api/[Java 8]
 image:https://travis-ci.org/mvillafuertem/spring4-java8.svg["Build Status", link="https://travis-ci.org/mvillafuertem/spring4-java8"]
+image:https://codecov.io/gh/mvillafuertem/spring4-java8/branch/master/graph/badge.svg["codecov", link="https://codecov.io/gh/mvillafuertem/spring4-java8"]
 
 == My Bean
 
