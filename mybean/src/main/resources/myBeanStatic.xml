@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- myBeanStatic instanciado con un método estático -->
+    <bean id="myBeanStaticFactoryMethod"
+          class="com.mvillafuertem.mybean.MyBeanStatic"
+          factory-method="createStaticFactoryMethod">
+    </bean>
+
+    <bean id="myBeanStatic" class="com.mvillafuertem.mybean.MyBeanStatic">
+        <!-- inject any dependencies required by this locator bean -->
+    </bean>
+
+    <bean id="myBeanStaticFactoryBean"
+          factory-bean="myBeanStatic"
+          factory-method="createStaticFactoryBean">
+    </bean>
+
+</beans>

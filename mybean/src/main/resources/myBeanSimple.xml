@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Declaro myBean -->
+    <!-- Declaro myBean, y utiliza el contructor por defecto para instanciarse -->
     <bean id="myBean" class="com.mvillafuertem.mybean.MyBean">
         <!-- Lee el atributo 'private String message' -->
         <property name="message">

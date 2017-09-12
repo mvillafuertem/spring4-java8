@@ -6,5 +6,6 @@
 
     <import resource="classpath:myBeanSimple.xml"/>
     <import resource="classpath:lifeCycleMyBean.xml"/>
+    <import resource="classpath:myBeanStatic.xml"/>
 
 </beans>
