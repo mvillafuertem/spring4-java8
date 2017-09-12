@@ -1,0 +1,26 @@
+= Spring 4 with Java 8
+:author: Miguel Villafuerte
+:email: mivimur@hotmail.com
+:revnumber: v1.0
+:revdate: 12 Septiembre 2017
+:version-label!:
+:toc: left
+:toclevels: 3
+:sectnums:
+:chapter-label:
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:experimental:
+:doctype: book
+:imagesdir: docs/resources/img
+
+NOTE: Research about https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/[Spring 4] with https://docs.oracle.com/javase/8/docs/api/[Java 8]
+
+== My Bean
+
+[source, java, numbered]
+.App.class
+----
+include::mybean/src/main/java/com/mvillafuertem/mybean/App.java[]
+----
