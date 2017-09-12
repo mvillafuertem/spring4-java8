@@ -24,5 +24,7 @@ image:https://codecov.io/gh/mvillafuertem/spring4-java8/branch/master/graph/badg
 [source, java, numbered]
 .App.class
 ----
+
 include::mybean/src/main/java/com/mvillafuertem/mybean/App.java[]
+
 ----
