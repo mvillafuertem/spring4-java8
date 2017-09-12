@@ -16,6 +16,7 @@
 :imagesdir: docs/resources/img
 
 NOTE: Research about https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/[Spring 4] with https://docs.oracle.com/javase/8/docs/api/[Java 8]
+image:https://travis-ci.org/mvillafuertem/spring4-java8.svg["Build Status", link="https://travis-ci.org/mvillafuertem/spring4-java8"]
 
 == My Bean
 
