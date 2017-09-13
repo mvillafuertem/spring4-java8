@@ -95,3 +95,42 @@ public class MyDependencyInjectionTest {
 }
 
 ----
+
+== My Scope
+
+[source, java, numbered]
+.MyScopePrototypeTest.class
+----
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = MyScopeConfig.class)
+public class MyScopePrototypeTest implements ApplicationContextAware {
+
+    @Autowired
+    private MyScopePrototype  prototype;
+    private ApplicationContext applicationContext;
+
+    @Test
+    public void main() {
+        /*
+            Comprobamos que en el application context
+            se crea dos instancias distintas MyScopePrototype
+         */
+
+        assertThat(this.prototype).isNotNull();
+
+        MyScopePrototype bean1 = applicationContext.getBean("myScopePrototype", MyScopePrototype.class);
+        assertThat(bean1).isNotNull();
+
+        MyScopePrototype bean2 = applicationContext.getBean("myScopePrototype", MyScopePrototype.class);
+        assertThat(bean2).isNotNull();
+        assertThat(bean1).isNotEqualTo(bean2);
+    }
+
+    @Override
+    public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+}
+
+----
