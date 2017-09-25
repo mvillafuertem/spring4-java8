@@ -1,6 +1,5 @@
 package com.mvillafuertem.myscope;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 

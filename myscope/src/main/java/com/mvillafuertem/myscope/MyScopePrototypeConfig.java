@@ -3,7 +3,6 @@ package com.mvillafuertem.myscope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
-import org.springframework.context.annotation.Scope;
 
 /**
  * Created by mvillafuertem on 9/13/17.

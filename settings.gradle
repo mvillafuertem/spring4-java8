@@ -3,4 +3,5 @@ include 'mybean'
 include 'mydependencyinjection'
 include 'myscope'
 include 'myValidation'
+include 'myaop'
 

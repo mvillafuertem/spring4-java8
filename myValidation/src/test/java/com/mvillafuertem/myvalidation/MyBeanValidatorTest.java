@@ -2,10 +2,6 @@ package com.mvillafuertem.myvalidation;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.annotation.Validated;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
