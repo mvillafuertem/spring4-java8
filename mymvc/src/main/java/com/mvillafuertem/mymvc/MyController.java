@@ -1,23 +1,23 @@
 package com.mvillafuertem.mymvc;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by mvillafuertem on 9/25/17.
  */
 @Controller
-@RequestMapping("/mymvc")
 public class MyController {
 
-    @GetMapping
-    public MyModel getModel() {
+    @GetMapping(value = "/users",
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<MyUser> get() {
 
-        final Long id = 1L;
-        final String name = "Pepe";
-        return new MyModel.Builder(id, name)
-                          .build();
+        MyUser user = new MyUser.Builder(1L, "Pepe").build();
+
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }

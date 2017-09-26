@@ -1,11 +1,13 @@
 package com.mvillafuertem.mymvc;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
 /**
  * Created by mvillafuertem on 9/25/17.
  */
-public class MyModel implements Serializable {
+public class MyUser implements Serializable {
 
     // Mandatory
     private final Long id;
@@ -14,7 +16,7 @@ public class MyModel implements Serializable {
     // Optional
     private final Integer phone;
 
-    private MyModel(Builder builder) {
+    private MyUser(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.phone = builder.phone;
@@ -45,7 +47,7 @@ public class MyModel implements Serializable {
         private final String name;
 
         // Optional with default value
-        private Integer phone = 0;
+        private Integer phone;
 
         public Builder(final Long id, final String name) {
             this.id = id;
@@ -57,8 +59,8 @@ public class MyModel implements Serializable {
             return this;
         }
 
-        public MyModel build() {
-            return new MyModel(this);
+        public MyUser build() {
+            return new MyUser(this);
         }
     }
 }
