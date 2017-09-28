@@ -65,9 +65,40 @@ public class App {
 
 ----
 
+== My MVC Servlet
+
+
+Esta clase sustituye al web.xml, te carga un Servlet con la configuracion que has definido en MyConfiguration.class
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-servlet[The DispatcherServlet]
+
+https://dzone.com/articles/spring-1[WebApplicationInitializer and ApplicationContextInitializer confusion]
+
+[source, java, numbered]
+.MyWebApplicationInitializer.class
+----
+
+public class MyWebApplicationInitializer implements WebApplicationInitializer {
+
+    @Override
+    public void onStartup(final ServletContext servletContext) throws ServletException {
+
+        AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
+        webApplicationContext.register(MyConfiguration.class);
+
+        ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher",
+                new DispatcherServlet(webApplicationContext));
+        registration.setLoadOnStartup(1);
+        registration.addMapping("/");
+    }
+}
+
+----
+
 == My Dependency Injection
 
 https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-factory-autowire[Autowiring modes]
+
 https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-autowired-annotation[@Autowired]
 
 [source, java, numbered]
