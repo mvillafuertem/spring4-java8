@@ -68,7 +68,7 @@ public class App {
 == My MVC Servlet
 
 
-Esta clase sustituye al web.xml, te carga un Servlet con la configuracion que has definido en MyConfiguration.class
+Esta clase sustituye al web.xml y define un Servlet con la configuracion que existe en MyConfiguration.class
 
 https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-servlet[The DispatcherServlet]
 
